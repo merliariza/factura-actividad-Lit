@@ -9,7 +9,7 @@ export class InvoiceComponent extends LitElement {
     super();
     this.invoiceNumber = this.generateInvoiceNumber();
   }
-
+//Formulario en componente web para los datos de factura
   render() {
     return html`
     <link
@@ -44,7 +44,7 @@ export class InvoiceComponent extends LitElement {
       </div>
     `;
   }
-
+//Genera el número de la factura
   generateInvoiceNumber() {
     const now = new Date();
     const year = now.getFullYear();
@@ -57,7 +57,7 @@ export class InvoiceComponent extends LitElement {
 
     return `FAC-${year}${month}${day}-${hours}${minutes}${seconds}-${milliseconds}`;
   }
-
+//Obtiene la información del formulario
   getInvoiceData() {
     return {
       numInvoice: this.invoiceNumber,
@@ -68,7 +68,7 @@ export class InvoiceComponent extends LitElement {
       email: this.shadowRoot.getElementById('email').value
     };
   }
-
+//Limpia los espacios del formulario
   reset() {
     this.invoiceNumber = this.generateInvoiceNumber();
     this.shadowRoot.getElementById('idInvoice').value = '';

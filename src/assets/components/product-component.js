@@ -9,7 +9,7 @@ export class ProductComponent extends LitElement {
     super();
     this.productCode = this.generateProductCode();
   }
-
+//Formulario en componente web para los datos de producto
   render() {
     return html`
     <link
@@ -36,7 +36,7 @@ export class ProductComponent extends LitElement {
       </div>
     `;
   }
-
+//Genera el código del producto
   generateProductCode() {
     const now = new Date();
     const year = now.getFullYear();
@@ -48,7 +48,7 @@ export class ProductComponent extends LitElement {
 
     return `PROD-${year}${month}${day}-${hours}${minutes}${seconds}`;
   }
-
+//Obtiene los datos del formulario de producto
   getProductData() {
     return {
       codProduct: this.productCode,
@@ -57,7 +57,7 @@ export class ProductComponent extends LitElement {
       quantity: parseInt(this.shadowRoot.getElementById('quantity').value)
     };
   }
-
+//Limpia los espacios del formulario de producto
   reset() {
     this.productCode = this.generateProductCode();
     this.shadowRoot.getElementById('nameProduct').value = '';
